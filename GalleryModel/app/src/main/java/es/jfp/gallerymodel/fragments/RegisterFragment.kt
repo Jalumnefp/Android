@@ -6,7 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.View.OnClickListener
 import android.view.ViewGroup
-import es.jfp.gallerymodel.R
+import com.google.android.material.snackbar.Snackbar
+import es.jfp.gallerymodel.classes.User
 import es.jfp.gallerymodel.databinding.FragmentRegisterBinding
 
 
@@ -32,8 +33,33 @@ class RegisterFragment : Fragment(), OnClickListener {
     }
 
     override fun onClick(v: View) {
-        miListener?.onClickRegisterButton()
 
+        when (v) {
+            binding.registerButton ->{
+                if (passwordOk()) {
+                    registerUser(User(
+                        binding.registerUsernameEditText.text.toString(),
+                        binding.registerPasswordEditText.text.toString()
+                    ))
+                    miListener?.onClickRegisterButton()
+                } else {
+                    Snackbar.make(binding.root, "Inicio de sesión incorrecto!", Snackbar.LENGTH_SHORT).show()
+                }
+            }
+
+        }
+    }
+
+    private fun registerUser(user: User) {
+        users_logged.add(user)
+
+    }
+
+    private fun passwordOk(): Boolean =
+        binding.registerPasswordEditText.text.toString() == binding.registerPasswordReEditText.text.toString()
+
+    companion object {
+        val users_logged: MutableList<User> = mutableListOf()
     }
 
 

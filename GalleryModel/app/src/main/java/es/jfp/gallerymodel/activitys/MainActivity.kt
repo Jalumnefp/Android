@@ -5,7 +5,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
+import android.widget.HeaderViewListAdapter
+import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
@@ -15,6 +19,8 @@ import com.google.android.material.navigation.NavigationView
 import es.jfp.gallerymodel.R
 import es.jfp.gallerymodel.databinding.ActivityMainBinding
 import es.jfp.gallerymodel.fragments.ArtworksViewFragment
+import es.jfp.gallerymodel.fragments.LoginFragment
+import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -25,7 +31,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.mainToolbar)
+
+        binding.mainToolbar.inflateMenu(R.menu.main_toolbar_menu)
+
+
         setupNavigationDrawer()
+
+        val headerView: View = binding.navigationView.getHeaderView(0)
+        setNavHeaderUserdata(headerView)
+
+
     }
 
     @Deprecated("Deprecated in Java")
@@ -78,4 +93,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             setReorderingAllowed(false)
         }
     }
+
+    private fun setNavHeaderUserdata(view: View) {
+        val user: TextView = view.findViewById(R.id.user_logged_nav)
+        user.text = LoginFragment.user_logged?.username
+    }
+
 }

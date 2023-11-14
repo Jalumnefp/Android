@@ -1,5 +1,6 @@
 package es.jfp.gallerymodel.fragments
 
+import android.app.ActionBar
 import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,7 +9,7 @@ import android.view.View
 import android.view.View.OnClickListener
 import android.view.ViewGroup
 import com.google.android.material.snackbar.Snackbar
-import es.jfp.gallerymodel.R
+import es.jfp.gallerymodel.classes.User
 import es.jfp.gallerymodel.databinding.FragmentLoginBinding
 
 
@@ -16,7 +17,7 @@ class LoginFragment : Fragment(), OnClickListener {
 
     interface LoginFragmentButtons {
         fun onClickLoginButton()
-        fun onClickSingupButton()
+        fun onClickSignupButton()
     }
 
     private var _binding: FragmentLoginBinding? = null
@@ -54,20 +55,27 @@ class LoginFragment : Fragment(), OnClickListener {
     override fun onClick(v: View) {
         when(v) {
             binding.loginButton -> {
-                if (login()) {
+
+                val user = User(
+                    binding.usernameEditText.text.toString(),
+                    binding.passwordEditText.text.toString()
+                )
+
+                if (login(user)) {
                     miListener?.onClickLoginButton()
+                    user_logged = user
                 } else {
                     Snackbar.make(binding.root, "Inicio de sesión incorrecto", Snackbar.LENGTH_SHORT).show()
                 }
             }
-            binding.singupTextview -> miListener?.onClickSingupButton()
+            binding.singupTextview -> miListener?.onClickSignupButton()
         }
     }
 
-    private fun login(): Boolean {
-        val username: String = binding.usernameEditText.text.toString()
-        val password: String = binding.passwordEditText.text.toString()
-        return username.isEmpty() and password.isEmpty()
+    private fun login(user: User): Boolean = RegisterFragment.users_logged.contains(user)
+
+    companion object {
+        var user_logged: User? = null
     }
 
 }
