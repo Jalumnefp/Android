@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ExtraTranslationAnimation</string>
+    <string name="button_transl">TRANSITION</string>
+    <string name="button_anim">ANIMATION</string>
+</resources>

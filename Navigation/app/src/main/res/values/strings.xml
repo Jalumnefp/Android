@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Navigation</string>
+    <string name="navigation_drawer_open">Navigation opened</string>
+    <string name="navigation_drawer_close">Navigation closed</string>
+    <string name="menu_camera">Camera</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_send">Send</string>
+    <string name="save">Information saved correctly</string>
+    <string name="the_name">Isaac García</string>
+    <string name="the_email">isaac.garcia@blablamail.com</string>
+    <string name="ico_save_title">Saving</string>
+    <string name="ico_settings_title">Settings</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

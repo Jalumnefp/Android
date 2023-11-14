@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background=" #5d6d7e"
+    android:layout_height="match_parent"
+
+    tools:context=".MenuFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <Button
+        android:id="@+id/toLoginFragmentBtn"
+        android:layout_width="225dp"
+        android:layout_height="47dp"
+        android:backgroundTint="@color/material_dynamic_secondary20"
+        android:text="Login"
+        android:layout_gravity="center" />
+
+    <Button
+        android:id="@+id/toCalculatorFragmentBtn"
+        android:layout_width="223dp"
+        android:layout_height="43dp"
+        android:backgroundTint="@color/material_dynamic_secondary20"
+        android:text="Calculadora"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="250dp"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher_foreground"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="120dp"/>
+
+
+</FrameLayout>

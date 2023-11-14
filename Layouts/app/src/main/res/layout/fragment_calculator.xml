@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalculatorFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/textViewResult"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_span="4"
+            android:gravity="right"
+            android:textSize="80px"
+            android:text="0"
+            android:layout_marginRight="10px" />
+
+    </TableRow>
+
+    <TableRow>
+
+        <Button
+            android:id="@+id/numberOneBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:layout_margin="10px"/>
+
+        <Button
+            android:id="@+id/numberTwoBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2"
+            android:layout_margin="10px" />
+
+        <Button
+            android:id="@+id/numberThreeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3"
+            android:layout_margin="10px" />
+
+        <Button
+            android:id="@+id/operationAddBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:layout_margin="10px" />
+    </TableRow>
+
+    <TableRow>
+
+        <Button
+            android:id="@+id/numberFourBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4"
+            android:layout_margin="10px" />
+
+        <Button
+            android:id="@+id/numberFiveBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5"
+            android:layout_margin="10px" />
+
+        <Button
+            android:id="@+id/numberSixBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6"
+            android:layout_margin="10px" />
+
+        <Button
+            android:id="@+id/operationSubstractBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:layout_margin="10px" />
+    </TableRow>
+
+    <TableRow>
+
+        <Button
+            android:id="@+id/numberSevenBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7"
+            android:layout_margin="10px" />
+
+        <Button
+            android:id="@+id/numberEightBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8"
+            android:layout_margin="10px" />
+
+        <Button
+            android:id="@+id/numberNineBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9"
+            android:layout_margin="10px" />
+
+        <Button
+            android:id="@+id/operationMultiplyBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*"
+            android:layout_margin="10px" />
+    </TableRow>
+
+    <TableRow>
+
+        <Button
+            android:id="@+id/numberZeroBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:layout_margin="10px" />
+
+        <Button
+            android:id="@+id/signDecimalBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="C"
+            android:layout_margin="10px" />
+
+        <Button
+            android:id="@+id/operationResultBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="="
+            android:layout_margin="10px"/>
+
+        <Button
+            android:id="@+id/operationDivisionBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:layout_margin="10px" />
+    </TableRow>
+
+</TableLayout>

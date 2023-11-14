@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_star"
+        android:enabled="true"
+        android:icon="@drawable/ic_action_star"
+        android:title="@string/star" />
+    <item
+        android:id="@+id/item_toys"
+        android:enabled="true"
+        android:icon="@drawable/ic_action_toys"
+        android:title="@string/toys" />
+    <item
+        android:id="@+id/item_wine"
+        android:enabled="true"
+        android:icon="@drawable/ic_action_wine"
+        android:title="@string/wine" />
+
+</menu>

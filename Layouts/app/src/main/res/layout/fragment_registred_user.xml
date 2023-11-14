@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background=" #5d6d7e"
+    tools:context=".RegistredUserFragment">
+
+    <TextView
+        android:id="@+id/title_linear"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="ACCESO VERIFICADO"
+        android:textColor=" #FFFFFF"
+        android:textSize="55px" />
+
+    <ImageView
+        android:id="@+id/imageView_linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/ic_open_lock_foreground" />
+
+    <TextView
+        android:id="@+id/textViewUserDone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:layout_weight="1"
+        android:text="Username"
+        android:gravity="center" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textViewPasswordDone"
+            android:layout_width="349dp"
+            android:layout_height="match_parent"
+            android:textSize="25dp"
+            android:layout_weight="1"
+            android:gravity="center"
+
+            android:text="Password" />
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="67dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:text="Ver" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/logofBtn"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_weight="1"
+        android:backgroundTint="@color/material_dynamic_secondary20"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        android:text="CERRAR SESIÓN" />
+
+</LinearLayout>
