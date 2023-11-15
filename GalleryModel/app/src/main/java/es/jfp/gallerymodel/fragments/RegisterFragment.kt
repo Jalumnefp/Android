@@ -1,5 +1,6 @@
 package es.jfp.gallerymodel.fragments
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -22,6 +23,15 @@ class RegisterFragment : Fragment(), OnClickListener {
 
     private var miListener: RegisterFragmentButtons? = null
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        miListener = context as? RegisterFragmentButtons
+        if (miListener == null) {
+            throw java.lang.NullPointerException("$context must implement RegisterFragmentButtons")
+        }
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -32,31 +42,50 @@ class RegisterFragment : Fragment(), OnClickListener {
         return binding.root
     }
 
+    override fun onDetach() {
+        super.onDetach()
+        miListener = null
+    }
+
     override fun onClick(v: View) {
 
         when (v) {
             binding.registerButton ->{
-                if (passwordOk()) {
-                    registerUser(User(
-                        binding.registerUsernameEditText.text.toString(),
-                        binding.registerPasswordEditText.text.toString()
-                    ))
+                val user: String = binding.registerUsernameEditText.text.toString()
+                val passwd1: String = binding.registerPasswordEditText.text.toString()
+                val passwd2: String = binding.registerPasswordReEditText.text.toString()
+                val logged: Boolean = registerUser(user, passwd1, passwd2)
+                if (logged) {
                     miListener?.onClickRegisterButton()
-                } else {
-                    Snackbar.make(binding.root, "Inicio de sesión incorrecto!", Snackbar.LENGTH_SHORT).show()
                 }
+
             }
 
         }
     }
 
-    private fun registerUser(user: User) {
-        users_logged.add(user)
+    private fun registerUser(user: String, passwd1: String, passwd2: String): Boolean {
+        val msg: String = if (anyFieldEmpty(user, passwd1, passwd2)) {
+            if (passwordOk(passwd1, passwd2)) {
+                users_logged.add(
+                    User(user, passwd1)
+                )
+                return true
+            } else {
+                "Las contraseñas deben coincidir"
+            }
+        } else {
+            "No pueden haber campos vacios!"
+        }
+        Snackbar.make(binding.root, msg, Snackbar.LENGTH_SHORT).show()
+        return false
 
     }
 
-    private fun passwordOk(): Boolean =
-        binding.registerPasswordEditText.text.toString() == binding.registerPasswordReEditText.text.toString()
+    private fun passwordOk(passwd1: String, passwd2: String): Boolean = passwd1 == passwd2
+
+    private fun anyFieldEmpty(username: String, passwd1: String, passwd2: String): Boolean =
+        username.isNotEmpty() and passwd1.isNotEmpty() and  passwd2.isNotEmpty()
 
     companion object {
         val users_logged: MutableList<User> = mutableListOf()

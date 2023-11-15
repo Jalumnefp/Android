@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.HeaderViewListAdapter
@@ -34,13 +35,25 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         binding.mainToolbar.inflateMenu(R.menu.main_toolbar_menu)
 
-
         setupNavigationDrawer()
 
         val headerView: View = binding.navigationView.getHeaderView(0)
         setNavHeaderUserdata(headerView)
 
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_toolbar_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean = when(item.itemId) {
+        R.id.action_settings -> {
+            Toast.makeText(this, "ñalskfañlskjdf", Toast.LENGTH_SHORT).show()
+            true
+        }
+        else -> super.onOptionsItemSelected(item)
     }
 
     @Deprecated("Deprecated in Java")

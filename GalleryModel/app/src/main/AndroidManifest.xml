@@ -14,7 +14,7 @@
         android:theme="@style/Theme.GalleryModel"
         tools:targetApi="31" >
         <activity
-            android:name=".activitys.LoginActivity"
+            android:name=".activitys.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activitys.MainActivity"
+            android:name=".activitys.LoginActivity"
             android:exported="false" >
         </activity>
     </application>

@@ -27,9 +27,9 @@ class ArtAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArtViewHolder {
         val binding = RecyclerArtItemBinding.inflate(LayoutInflater.from(context), parent, false)
 
-        val color = getRandomColor()
+        /*val color = getRandomColor()
         val card: CardView = binding.recyclerArtCard
-        card.setCardBackgroundColor(ContextCompat.getColor(context, color))
+        card.setCardBackgroundColor(ContextCompat.getColor(context, color))*/
 
         return ArtViewHolder(binding)
     }
@@ -40,7 +40,10 @@ class ArtAdapter(
 
     override fun onBindViewHolder(holder: ArtViewHolder, position: Int) {
         val item = artworks[position]
+        val color = getRandomColor()
         holder.bindItem(item, context)
+        val card: CardView = holder.itemView as CardView
+        card.setCardBackgroundColor(ContextCompat.getColor(context, color))
         holder.itemView.setOnClickListener { miListener(item) }
     }
 

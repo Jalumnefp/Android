@@ -4,12 +4,16 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import com.google.android.material.snackbar.Snackbar
 import es.jfp.gallerymodel.R
+import es.jfp.gallerymodel.classes.Art
 import es.jfp.gallerymodel.databinding.ActivityLoginBinding
+import es.jfp.gallerymodel.dialogs.ArtDialogFragment
+import es.jfp.gallerymodel.fragments.ArtworksViewFragment
 import es.jfp.gallerymodel.fragments.LoginFragment
 import es.jfp.gallerymodel.fragments.LoginFragment.LoginFragmentButtons
 import es.jfp.gallerymodel.fragments.RegisterFragment
@@ -25,6 +29,7 @@ class LoginActivity : AppCompatActivity(), LoginFragmentButtons, RegisterFragmen
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setSupportActionBar(binding.loginToolbar)
     }
 
     override fun onRequestPermissionsResult(

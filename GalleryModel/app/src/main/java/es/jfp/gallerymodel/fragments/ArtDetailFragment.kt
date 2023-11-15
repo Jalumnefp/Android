@@ -34,7 +34,7 @@ class ArtDetailFragment : Fragment() {
         _binding = FragmentArtDetailBinding.inflate(inflater, container, false)
 
         binding.artTitleTextview.text = paramTitle
-        binding.artAuthorTextview.text = "By ${paramAuthor}"
+        binding.artAuthorTextview.text = "By $paramAuthor"
         binding.artImageview.setImageResource(paramImage!!)
 
         return binding.root

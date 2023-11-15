@@ -14,6 +14,7 @@ import es.jfp.gallerymodel.R
 import es.jfp.gallerymodel.adaptets.ArtAdapter
 import es.jfp.gallerymodel.classes.Art
 import es.jfp.gallerymodel.databinding.FragmentArtworksViewBinding
+import es.jfp.gallerymodel.dialogs.ArtDialogFragment
 import es.jfp.gallerymodel.fragments.ArtDetailFragment.Companion.ARG_AUTHOR
 import es.jfp.gallerymodel.fragments.ArtDetailFragment.Companion.ARG_IMAGE
 import es.jfp.gallerymodel.fragments.ArtDetailFragment.Companion.ARG_TITLE
@@ -31,24 +32,16 @@ class ArtworksViewFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentArtworksViewBinding.inflate(inflater, container, false)
 
+        binding.floatingButtonAdd.setOnClickListener {
+            ArtDialogFragment().show(requireActivity().supportFragmentManager, "ADD_ART_DIALOG")
+        }
+
         setupRecyclerView()
 
         return binding.root
     }
 
     private fun setupRecyclerView() {
-        val artworks = mutableListOf(
-            Art(R.drawable.gernika, "Guernica", "Pablo Picasso"),
-            Art(R.drawable.starnight, "Starry night", "Vincent Van Gogh"),
-            Art(R.drawable.grito, "The shout", "Edvard Munch"),
-            Art(R.drawable.sunflowers, "Sunflowers", "Vincent Van Gogh"),
-            Art(R.drawable.ic_launcher_foreground, "asdfa", "asdfasd"),
-            Art(R.drawable.ic_launcher_foreground, "asdfa", "asdfasd"),
-            Art(R.drawable.ic_launcher_foreground, "asdfa", "asdfasd"),
-            Art(R.drawable.ic_launcher_foreground, "asdfa", "asdfasd"),
-            Art(R.drawable.ic_launcher_foreground, "asdfa", "asdfasd"),
-
-        )
 
         val artAdapter = ArtAdapter(context!!, artworks) { art: Art ->
             val bundle: Bundle = bundleOf(
@@ -66,6 +59,21 @@ class ArtworksViewFragment : Fragment() {
         binding.artworkRecyclerContainer.adapter = artAdapter
         binding.artworkRecyclerContainer.setHasFixedSize(true)
         binding.artworkRecyclerContainer.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+    }
+
+    companion object {
+        val artworks = mutableListOf(
+            Art(R.drawable.gernika, "Guernica", "Pablo Picasso"),
+            Art(R.drawable.starnight, "Starry night", "Vincent Van Gogh"),
+            Art(R.drawable.grito, "The shout", "Edvard Munch"),
+            Art(R.drawable.sunflowers, "Sunflowers", "Vincent Van Gogh"),
+            Art(R.drawable.ic_launcher_foreground, "asdfa", "asdfasd"),
+            Art(R.drawable.ic_launcher_foreground, "asdfa", "asdfasd"),
+            Art(R.drawable.ic_launcher_foreground, "asdfa", "asdfasd"),
+            Art(R.drawable.ic_launcher_foreground, "asdfa", "asdfasd"),
+            Art(R.drawable.ic_launcher_foreground, "asdfa", "asdfasd"),
+
+            )
     }
 
 
