@@ -9,6 +9,7 @@ import android.view.View
 import android.view.View.OnClickListener
 import android.view.ViewGroup
 import com.google.android.material.snackbar.Snackbar
+import es.jfp.gallerymodel.activitys.LoginActivity
 import es.jfp.gallerymodel.classes.User
 import es.jfp.gallerymodel.databinding.FragmentLoginBinding
 
@@ -45,6 +46,12 @@ class LoginFragment : Fragment(), OnClickListener {
         binding.singupTextview.setOnClickListener(this)
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        (activity as? LoginActivity)?.supportActionBar?.title = this::class.java.simpleName
     }
 
     override fun onDetach() {

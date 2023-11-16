@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import es.jfp.gallerymodel.R
+import es.jfp.gallerymodel.activitys.MainActivity
 import es.jfp.gallerymodel.databinding.FragmentPresentationBinding
 
 
@@ -21,6 +22,12 @@ class PresentationFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentPresentationBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        (activity as? MainActivity)?.supportActionBar?.title = this::class.java.simpleName
     }
 
 

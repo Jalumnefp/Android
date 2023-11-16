@@ -8,6 +8,7 @@ import android.view.View
 import android.view.View.OnClickListener
 import android.view.ViewGroup
 import com.google.android.material.snackbar.Snackbar
+import es.jfp.gallerymodel.activitys.LoginActivity
 import es.jfp.gallerymodel.classes.User
 import es.jfp.gallerymodel.databinding.FragmentRegisterBinding
 
@@ -40,6 +41,12 @@ class RegisterFragment : Fragment(), OnClickListener {
         _binding = FragmentRegisterBinding.inflate(inflater, container, false)
         binding.registerButton.setOnClickListener(this)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        (activity as? LoginActivity)?.supportActionBar?.title = this::class.java.simpleName
     }
 
     override fun onDetach() {

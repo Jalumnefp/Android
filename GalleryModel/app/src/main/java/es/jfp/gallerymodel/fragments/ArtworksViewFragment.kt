@@ -11,6 +11,7 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import androidx.recyclerview.widget.LinearLayoutManager
 import es.jfp.gallerymodel.R
+import es.jfp.gallerymodel.activitys.MainActivity
 import es.jfp.gallerymodel.adaptets.ArtAdapter
 import es.jfp.gallerymodel.classes.Art
 import es.jfp.gallerymodel.databinding.FragmentArtworksViewBinding
@@ -39,6 +40,12 @@ class ArtworksViewFragment : Fragment() {
         setupRecyclerView()
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        (activity as? MainActivity)?.supportActionBar?.title = this::class.java.simpleName
     }
 
     private fun setupRecyclerView() {

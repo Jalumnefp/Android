@@ -19,9 +19,12 @@ import com.google.android.material.navigation.NavigationBarView
 import com.google.android.material.navigation.NavigationView
 import es.jfp.gallerymodel.R
 import es.jfp.gallerymodel.databinding.ActivityMainBinding
+import es.jfp.gallerymodel.dialogs.LogoffDialogFragment
 import es.jfp.gallerymodel.fragments.ArtworksViewFragment
 import es.jfp.gallerymodel.fragments.LoginFragment
+import es.jfp.gallerymodel.fragments.SettingsFragment
 import org.w3c.dom.Text
+import kotlin.math.log
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -87,12 +90,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 true
             }
             R.id.nav_settings ->{
-                Toast.makeText(this, "ñlasnfgñoawri", Toast.LENGTH_SHORT).show()
+                fragmentChanger(SettingsFragment())
                 true
             }
             R.id.nav_logoff ->{
-                val intent = Intent(this, LoginActivity::class.java)
-                startActivity(intent)
+
+                LogoffDialogFragment().show(supportFragmentManager, "LOGOFF")
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -110,6 +113,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private fun setNavHeaderUserdata(view: View) {
         val user: TextView = view.findViewById(R.id.user_logged_nav)
         user.text = LoginFragment.user_logged?.username
+    }
+
+    companion object {
+        var logoff: Boolean = true
     }
 
 }

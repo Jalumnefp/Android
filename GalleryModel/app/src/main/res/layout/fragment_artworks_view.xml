@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/wallpaper_app_4"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.ArtworksViewFragment">
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/artwork_recycler_container"
