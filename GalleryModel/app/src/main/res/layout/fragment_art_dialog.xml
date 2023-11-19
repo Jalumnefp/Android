@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:text="Añadir obra"
+        android:text="@string/add_work"
         android:textStyle="bold"
         android:textAlignment="center"
         android:background="@color/teal_200"/>
@@ -18,7 +18,7 @@
         android:id="@+id/toadd_title_art"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Título"
+        android:hint="@string/title"
         android:layout_margin="4dp"
         android:textSize="15sp"
         android:autofillHints="name" />
@@ -27,7 +27,7 @@
         android:id="@+id/toadd_author_art"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Autor"
+        android:hint="@string/author"
         android:layout_margin="4dp"
         android:textSize="15sp" />
 
@@ -37,7 +37,7 @@
         android:layout_height="50dp"
         android:layout_margin="4dp"
         android:padding="0dp"
-        android:text="Select image"
+        android:text="@string/select_image"
         android:layout_gravity="start"
         android:textSize="15sp"/>
 

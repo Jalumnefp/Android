@@ -27,7 +27,6 @@ class LoginActivity : AppCompatActivity(), LoginFragmentButtons, RegisterFragmen
         setContentView(binding.root)
         setSupportActionBar(binding.loginToolbar)
 
-
         requestPermissionIfNotAllowed()
 
     }

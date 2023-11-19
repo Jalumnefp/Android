@@ -29,8 +29,8 @@
 
         <TextView
             android:id="@+id/art_title_textview"
-            android:layout_width="179dp"
-            android:layout_height="37dp"
+            android:layout_width="177dp"
+            android:layout_height="61dp"
             android:layout_marginStart="31dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="28dp"
@@ -46,13 +46,13 @@
 
         <TextView
             android:id="@+id/art_author_textview"
-            android:layout_width="132dp"
-            android:layout_height="46dp"
+            android:layout_width="134dp"
+            android:layout_height="21dp"
             android:layout_marginStart="31dp"
             android:layout_marginEnd="27dp"
             android:layout_marginBottom="17dp"
             android:text="Person"
-            android:textAlignment="textEnd"
+            android:textAlignment="center"
             android:textSize="15sp"
             android:textStyle="italic"
             card_view:layout_constraintBottom_toBottomOf="parent"

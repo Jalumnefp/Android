@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean = when(item.itemId) {
         R.id.action_settings -> {
-            Toast.makeText(this, "ñalskfañlskjdf", Toast.LENGTH_SHORT).show()
+            fragmentChanger(SettingsFragment())
             true
         }
         else -> super.onOptionsItemSelected(item)
@@ -94,7 +94,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 true
             }
             R.id.nav_logoff ->{
-
                 LogoffDialogFragment().show(supportFragmentManager, "LOGOFF")
                 true
             }
@@ -115,8 +114,5 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         user.text = LoginFragment.user_logged?.username
     }
 
-    companion object {
-        var logoff: Boolean = true
-    }
 
 }

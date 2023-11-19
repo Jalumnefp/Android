@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         app:cardCornerRadius="40dp"
         app:contentPadding="25dp"
-        app:cardBackgroundColor="#C1FFFFFF">
+        app:cardBackgroundColor="?attr/color">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -41,7 +41,7 @@
                 android:layout_marginEnd="42dp"
                 android:layout_marginBottom="47dp"
                 android:ems="10"
-                android:hint="Username"
+                android:hint="@string/username"
                 android:inputType="textPersonName"
                 app:layout_constraintBottom_toTopOf="@+id/register_password_edit_text"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -55,7 +55,7 @@
                 android:layout_marginEnd="40dp"
                 android:layout_marginBottom="21dp"
                 android:ems="10"
-                android:hint="Password"
+                android:hint="@string/password"
                 android:inputType="textPassword"
                 app:layout_constraintBottom_toTopOf="@+id/register_password_re_edit_text"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -69,7 +69,7 @@
                 android:layout_marginEnd="40dp"
                 android:layout_marginBottom="48dp"
                 android:ems="10"
-                android:hint="Repeat password"
+                android:hint="@string/repeat_password"
                 android:inputType="textPassword"
                 app:layout_constraintBottom_toTopOf="@+id/register_button"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -82,7 +82,7 @@
                 android:layout_marginStart="38dp"
                 android:layout_marginEnd="38dp"
                 android:layout_marginBottom="55dp"
-                android:text="Register"
+                android:text="@string/register"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"

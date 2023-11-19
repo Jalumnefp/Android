@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.View.OnClickListener
 import android.view.ViewGroup
+import androidx.viewbinding.ViewBinding
 import com.google.android.material.snackbar.Snackbar
 import es.jfp.gallerymodel.activitys.LoginActivity
 import es.jfp.gallerymodel.classes.User

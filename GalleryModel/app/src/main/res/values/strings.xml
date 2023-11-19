@@ -1,10 +1,22 @@
 <resources>
-    <string name="app_name">GalleryModel</string>
+    <string name="app_name" translatable="false">GalleryModel</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="gallery_item">Galería</string>
+    <string name="gallery_item">Gallery</string>
     <string name="navigation_drawer_open">OPEN</string>
     <string name="navigation_drawer_close">CLOSE</string>
     <string name="settings_item">Settings</string>
-    <string name="logoff_item">Cerrar sesión</string>
+    <string name="logoff_item">Log off</string>
+    <string name="add_work">Add art work</string>
+    <string name="title">Title</string>
+    <string name="author">Author</string>
+    <string name="select_image">Select image</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="repeat_password">Repeat password</string>
+    <string name="login">Login</string>
+    <string name="new_here">New here?</string>
+    <string name="sign_up">Sign up</string>
+    <string name="presentation">Wellcome to the best android art gallery!</string>
+    <string name="register">Register</string>
 </resources>

@@ -75,10 +75,22 @@ class ArtworksViewFragment : Fragment() {
             Art(R.drawable.grito, "The shout", "Edvard Munch"),
             Art(R.drawable.sunflowers, "Sunflowers", "Vincent Van Gogh"),
             Art(R.drawable.ic_launcher_foreground, "asdfa", "asdfasd"),
-            Art(R.drawable.ic_launcher_foreground, "asdfa", "asdfasd"),
-            Art(R.drawable.ic_launcher_foreground, "asdfa", "asdfasd"),
-            Art(R.drawable.ic_launcher_foreground, "asdfa", "asdfasd"),
-            Art(R.drawable.ic_launcher_foreground, "asdfa", "asdfasd"),
+            Art(R.drawable.ic_launcher_foreground, "Mona Lisa", "Leonardo da Vinci"),
+            Art(R.drawable.ic_launcher_foreground, "The Night Watch", "Rembrandt"),
+            Art(R.drawable.ic_launcher_foreground, "The Thinker", "Auguste Rodin"),
+            Art(R.drawable.ic_launcher_foreground, "The Last Supper", "Leonardo da Vinci"),
+            Art(R.drawable.ic_launcher_foreground, "The Scream", "Edvard Munch"),
+            Art(R.drawable.ic_launcher_foreground, "Star Birth", "NASA"),
+            Art(R.drawable.ic_launcher_foreground, "The Birthday", "Marc Chagall"),
+            Art(R.drawable.ic_launcher_foreground, "Water Lilies", "Claude Monet"),
+            Art(R.drawable.ic_launcher_foreground, "Guernica", "Pablo Picasso"),
+            Art(R.drawable.ic_launcher_foreground, "Virgin of the Rocks", "Leonardo da Vinci"),
+            Art(R.drawable.ic_launcher_foreground, "The Creation of Adam", "Michelangelo"),
+            Art(R.drawable.ic_launcher_foreground, "The Night Cafe", "Vincent Van Gogh"),
+            Art(R.drawable.ic_launcher_foreground, "Girl with a Pearl Earring", "Johannes Vermeer"),
+            Art(R.drawable.ic_launcher_foreground, "Balduccino", "Gian Lorenzo Bernini"),
+            Art(R.drawable.ic_launcher_foreground, "The Sistine Chapel Ceiling", "Michelangelo"),
+            Art(R.drawable.ic_launcher_foreground, "Olympia", "Édouard Manet")
 
             )
     }

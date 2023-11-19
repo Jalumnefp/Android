@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_marginTop="100dp"
-        android:text="Wellcome to the best android art gallery!"
+        android:text="@string/presentation"
         android:textStyle="bold"
         android:textSize="@android:dimen/app_icon_size" />
 
