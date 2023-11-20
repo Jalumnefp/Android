@@ -13,6 +13,7 @@ import androidx.annotation.ColorInt
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import es.jfp.gallerymodel.R
 import es.jfp.gallerymodel.classes.Art
 import es.jfp.gallerymodel.databinding.RecyclerArtItemBinding
@@ -63,7 +64,12 @@ class ArtAdapter(
         private val artAuthor: TextView = binding.artAuthorTextview
 
         fun bindItem(art: Art, context: Context) {
-            artImage.setImageResource(art.image)
+            if (art.imguri==null) {
+                artImage.setImageResource(art.image)
+            } else {
+                Picasso.get().load(art.imguri).into(artImage)
+            }
+
             artName.text = art.name
             artAuthor.text = art.author
         }

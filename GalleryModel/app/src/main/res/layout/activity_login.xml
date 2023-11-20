@@ -18,8 +18,8 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/login_fragment_container"
         android:name="es.jfp.gallerymodel.fragments.LoginFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginTop="?attr/actionBarSize"
         />
 

@@ -1,5 +1,6 @@
 package es.jfp.gallerymodel.fragments
 
+import android.content.res.Configuration.ORIENTATION_PORTRAIT
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -56,11 +57,12 @@ class ArtworksViewFragment : Fragment() {
                 ARG_AUTHOR to art.author,
                 ARG_IMAGE to art.image
             )
-            activity?.supportFragmentManager?.commit {
-                replace<ArtDetailFragment>(R.id.main_fragment_container, args = bundle)
-                addToBackStack(null)
-                setReorderingAllowed(false)
+            if (resources.configuration.orientation == ORIENTATION_PORTRAIT) {
+               fragmentChanger(R.id.main_fragment_container, bundle)
+            } else {
+                fragmentChanger(R.id.main_fragment_container_2, bundle)
             }
+
         }
 
         binding.artworkRecyclerContainer.adapter = artAdapter
@@ -68,29 +70,37 @@ class ArtworksViewFragment : Fragment() {
         binding.artworkRecyclerContainer.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
     }
 
+    private fun fragmentChanger(container: Int, args: Bundle) {
+        activity?.supportFragmentManager?.commit {
+            replace<ArtDetailFragment>(container, args = args)
+            addToBackStack(null)
+            setReorderingAllowed(false)
+        }
+    }
+
     companion object {
         val artworks = mutableListOf(
-            Art(R.drawable.gernika, "Guernica", "Pablo Picasso"),
-            Art(R.drawable.starnight, "Starry night", "Vincent Van Gogh"),
-            Art(R.drawable.grito, "The shout", "Edvard Munch"),
-            Art(R.drawable.sunflowers, "Sunflowers", "Vincent Van Gogh"),
-            Art(R.drawable.ic_launcher_foreground, "asdfa", "asdfasd"),
-            Art(R.drawable.ic_launcher_foreground, "Mona Lisa", "Leonardo da Vinci"),
-            Art(R.drawable.ic_launcher_foreground, "The Night Watch", "Rembrandt"),
-            Art(R.drawable.ic_launcher_foreground, "The Thinker", "Auguste Rodin"),
-            Art(R.drawable.ic_launcher_foreground, "The Last Supper", "Leonardo da Vinci"),
-            Art(R.drawable.ic_launcher_foreground, "The Scream", "Edvard Munch"),
-            Art(R.drawable.ic_launcher_foreground, "Star Birth", "NASA"),
-            Art(R.drawable.ic_launcher_foreground, "The Birthday", "Marc Chagall"),
-            Art(R.drawable.ic_launcher_foreground, "Water Lilies", "Claude Monet"),
-            Art(R.drawable.ic_launcher_foreground, "Guernica", "Pablo Picasso"),
-            Art(R.drawable.ic_launcher_foreground, "Virgin of the Rocks", "Leonardo da Vinci"),
-            Art(R.drawable.ic_launcher_foreground, "The Creation of Adam", "Michelangelo"),
-            Art(R.drawable.ic_launcher_foreground, "The Night Cafe", "Vincent Van Gogh"),
-            Art(R.drawable.ic_launcher_foreground, "Girl with a Pearl Earring", "Johannes Vermeer"),
-            Art(R.drawable.ic_launcher_foreground, "Balduccino", "Gian Lorenzo Bernini"),
-            Art(R.drawable.ic_launcher_foreground, "The Sistine Chapel Ceiling", "Michelangelo"),
-            Art(R.drawable.ic_launcher_foreground, "Olympia", "Édouard Manet")
+            Art(R.drawable.gernika, "Guernica", "Pablo Picasso", null),
+            Art(R.drawable.starnight, "Starry night", "Vincent Van Gogh", null),
+            Art(R.drawable.grito, "The shout", "Edvard Munch", null),
+            Art(R.drawable.sunflowers, "Sunflowers", "Vincent Van Gogh", null),
+            Art(R.drawable.ic_launcher_foreground, "asdfa", "asdfasd", null),
+            Art(R.drawable.ic_launcher_foreground, "Mona Lisa", "Leonardo da Vinci", null),
+            Art(R.drawable.ic_launcher_foreground, "The Night Watch", "Rembrandt", null),
+            Art(R.drawable.ic_launcher_foreground, "The Thinker", "Auguste Rodin", null),
+            Art(R.drawable.ic_launcher_foreground, "The Last Supper", "Leonardo da Vinci", null),
+            Art(R.drawable.ic_launcher_foreground, "The Scream", "Edvard Munch", null),
+            Art(R.drawable.ic_launcher_foreground, "Star Birth", "NASA", null),
+            Art(R.drawable.ic_launcher_foreground, "The Birthday", "Marc Chagall", null),
+            Art(R.drawable.ic_launcher_foreground, "Water Lilies", "Claude Monet", null),
+            Art(R.drawable.ic_launcher_foreground, "Guernica", "Pablo Picasso", null),
+            Art(R.drawable.ic_launcher_foreground, "Virgin of the Rocks", "Leonardo da Vinci", null),
+            Art(R.drawable.ic_launcher_foreground, "The Creation of Adam", "Michelangelo", null),
+            Art(R.drawable.ic_launcher_foreground, "The Night Cafe", "Vincent Van Gogh", null),
+            Art(R.drawable.ic_launcher_foreground, "Girl with a Pearl Earring", "Johannes Vermeer", null),
+            Art(R.drawable.ic_launcher_foreground, "Balduccino", "Gian Lorenzo Bernini", null),
+            Art(R.drawable.ic_launcher_foreground, "The Sistine Chapel Ceiling", "Michelangelo", null),
+            Art(R.drawable.ic_launcher_foreground, "Olympia", "Édouard Manet", null)
 
             )
     }

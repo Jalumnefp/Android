@@ -5,6 +5,7 @@ import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
@@ -15,13 +16,19 @@ import android.view.View.OnClickListener
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
+import android.widget.TextView
 import androidx.fragment.app.DialogFragment
+import com.squareup.picasso.Picasso
 import es.jfp.gallerymodel.R
 import es.jfp.gallerymodel.classes.Art
 import es.jfp.gallerymodel.fragments.ArtworksViewFragment
+import org.w3c.dom.Text
 
 
 class ArtDialogFragment : DialogFragment() {
+
+    private var selectedImage: Uri? = null
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {
@@ -41,30 +48,34 @@ class ArtDialogFragment : DialogFragment() {
             builder
                 .setView(view)
                 .setPositiveButton("CREATE") {dialog, id ->
-                    val title = titleTextview.text.toString()
-                    val author = authorTextview.text.toString()
-                    ArtworksViewFragment.artworks.add(
-                        Art(0, title, author)
-                    )
+                    onClickCreateButton(titleTextview, authorTextview)
                 }
-                .setNegativeButton("CANCEL") {dialog, id ->
-
-                }
+                .setNegativeButton("CANCEL") {dialog, id ->}
 
             builder.create()
         } ?: throw IllegalStateException("Activity cannot be null")
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        // 
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == 1234 && resultCode == RESULT_OK && data != null) {
 
-            val selectedImageUri = data.data
+            selectedImage = data.data
 
-            Log.d("Jisus", selectedImageUri.toString())
+            Log.d("asdf", data.data.toString())
 
         }
+    }
+
+    private fun onClickCreateButton(titleView: EditText, authorView: EditText) {
+        val title = titleView.text.toString()
+        val author = authorView.text.toString()
+        ArtworksViewFragment.artworks.add(
+            Art(0, title, author, selectedImage)
+        )
     }
 
     private fun openImagePicker() {

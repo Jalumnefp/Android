@@ -23,7 +23,6 @@ class PresentationFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         _binding = FragmentPresentationBinding.inflate(inflater, container, false)
-        Log.d("asdf", Locale.getDefault().toString())
         return binding.root
     }
 
