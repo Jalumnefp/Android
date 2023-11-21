@@ -12,6 +12,7 @@ import es.jfp.gallerymodel.R
 import es.jfp.gallerymodel.activitys.LoginActivity
 import es.jfp.gallerymodel.classes.Art
 import es.jfp.gallerymodel.fragments.ArtworksViewFragment
+import java.util.*
 
 
 class LogoffDialogFragment : DialogFragment() {
@@ -21,17 +22,14 @@ class LogoffDialogFragment : DialogFragment() {
         return activity?.let {
             val builder = AlertDialog.Builder(it)
 
-            val inflater = requireActivity().layoutInflater
-
-
             builder
-                .setTitle("Cerrar sesión")
-                .setMessage("Comprobación de la determinación del usuario a abandonar la sesión")
-                .setPositiveButton("CERRAR SESIÓN") { dialog, id ->
+                .setTitle(R.string.close_session)
+                .setMessage(R.string.logof_msg)
+                .setPositiveButton(R.string.close_session) { dialog, id ->
                     val intent = Intent(activity, LoginActivity::class.java)
                     startActivity(intent)
                 }
-                .setNegativeButton("CANCELAR") { dialog, id -> }
+                .setNegativeButton(R.string.cancel) { dialog, id -> }
 
             builder.create()
         } ?: throw IllegalStateException("Activity cannot be null")

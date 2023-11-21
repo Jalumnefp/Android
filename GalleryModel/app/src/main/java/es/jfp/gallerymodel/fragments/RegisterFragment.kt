@@ -8,6 +8,7 @@ import android.view.View
 import android.view.View.OnClickListener
 import android.view.ViewGroup
 import com.google.android.material.snackbar.Snackbar
+import es.jfp.gallerymodel.R
 import es.jfp.gallerymodel.activitys.LoginActivity
 import es.jfp.gallerymodel.classes.User
 import es.jfp.gallerymodel.databinding.FragmentRegisterBinding
@@ -63,6 +64,7 @@ class RegisterFragment : Fragment(), OnClickListener {
                 val passwd2: String = binding.registerPasswordReEditText.text.toString()
                 val logged: Boolean = registerUser(user, passwd1, passwd2)
                 if (logged) {
+                    Snackbar.make(binding.root, R.string.registration_successfull, Snackbar.LENGTH_SHORT).show()
                     miListener?.onClickRegisterButton()
                 }
 
@@ -95,7 +97,7 @@ class RegisterFragment : Fragment(), OnClickListener {
         username.isNotEmpty() and passwd1.isNotEmpty() and  passwd2.isNotEmpty()
 
     companion object {
-        val users_logged: MutableList<User> = mutableListOf()
+        val users_logged: MutableList<User> = mutableListOf(User("admin", ""))
     }
 
 

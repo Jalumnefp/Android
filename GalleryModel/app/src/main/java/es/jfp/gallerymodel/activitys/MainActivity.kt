@@ -26,13 +26,10 @@ import es.jfp.gallerymodel.R
 import es.jfp.gallerymodel.databinding.ActivityMainBinding
 import es.jfp.gallerymodel.databinding.FragmentArtDetailBinding
 import es.jfp.gallerymodel.dialogs.LogoffDialogFragment
-import es.jfp.gallerymodel.fragments.ArtDetailFragment
+import es.jfp.gallerymodel.fragments.*
 import es.jfp.gallerymodel.fragments.ArtDetailFragment.Companion.ARG_AUTHOR
 import es.jfp.gallerymodel.fragments.ArtDetailFragment.Companion.ARG_IMAGE
 import es.jfp.gallerymodel.fragments.ArtDetailFragment.Companion.ARG_TITLE
-import es.jfp.gallerymodel.fragments.ArtworksViewFragment
-import es.jfp.gallerymodel.fragments.LoginFragment
-import es.jfp.gallerymodel.fragments.SettingsFragment
 import org.w3c.dom.Text
 import kotlin.math.log
 
@@ -100,6 +97,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         binding.mainDrawerLayout.closeDrawer(GravityCompat.START)
         return when(item.itemId) {
+            R.id.nav_home ->{
+                fragmentChanger(R.id.main_fragment_container, PresentationFragment())
+                binding.mainFragmentContainer2?.visibility = View.INVISIBLE
+                true
+            }
             R.id.nav_gallery ->{
                 if (!isPortrait) {
                     val args: Bundle = bundleOf(
@@ -114,7 +116,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_settings ->{
                 fragmentChanger(R.id.main_fragment_container, SettingsFragment())
                 binding.mainFragmentContainer2?.visibility = View.INVISIBLE
-                binding.mainFragmentContainer2?.isEnabled = false
                 true
             }
             R.id.nav_logoff ->{

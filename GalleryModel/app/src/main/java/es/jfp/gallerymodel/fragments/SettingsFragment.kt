@@ -36,10 +36,7 @@ class SettingsFragment : Fragment(), OnItemSelectedListener {
 
         currentLanguage?.let { updateDefaultLang(it) }
 
-        if (
-            (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) or
-            isDarkModeActivated()
-        ) {
+        if ((AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) or isDarkModeActivated()) {
             binding.switchDarkMode.isChecked = true
         }
 

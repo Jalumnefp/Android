@@ -47,10 +47,10 @@ class ArtDialogFragment : DialogFragment() {
 
             builder
                 .setView(view)
-                .setPositiveButton("CREATE") {dialog, id ->
+                .setPositiveButton(R.string.create) {dialog, id ->
                     onClickCreateButton(titleTextview, authorTextview)
                 }
-                .setNegativeButton("CANCEL") {dialog, id ->}
+                .setNegativeButton(R.string.cancel) {dialog, id ->}
 
             builder.create()
         } ?: throw IllegalStateException("Activity cannot be null")
@@ -64,8 +64,6 @@ class ArtDialogFragment : DialogFragment() {
         if (requestCode == 1234 && resultCode == RESULT_OK && data != null) {
 
             selectedImage = data.data
-
-            Log.d("asdf", data.data.toString())
 
         }
     }
