@@ -21,18 +21,17 @@
 
             <ImageView
                 android:id="@+id/imageView4"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
-                android:layout_marginStart="140dp"
-                android:layout_marginTop="127dp"
-                android:layout_marginEnd="140dp"
-                android:layout_marginBottom="48dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="82dp"
+                android:layout_marginTop="75dp"
+                android:layout_marginEnd="83dp"
+                android:layout_marginBottom="53dp"
                 android:src="@mipmap/ic_launcher_round"
-                app:layout_constraintBottom_toTopOf="@+id/username_edit_layout"
+                app:layout_constraintBottom_toTopOf="@+id/register_username_edit_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.855" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/username_edit_layout"
@@ -40,7 +39,7 @@
                 android:layout_height="55dp"
                 android:layout_marginStart="63dp"
                 android:layout_marginEnd="63dp"
-                android:layout_marginBottom="48dp"
+                android:layout_marginBottom="30dp"
                 app:layout_constraintBottom_toTopOf="@+id/password_edit_layout"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
@@ -48,11 +47,10 @@
                 <EditText
                     android:id="@+id/username_edit_text"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:background="@android:color/transparent"
                     android:hint="@string/username"
-                    android:inputType="textPersonName"
-                    />
+                    android:inputType="textPersonName" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
