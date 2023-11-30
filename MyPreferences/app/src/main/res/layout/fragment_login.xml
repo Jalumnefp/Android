@@ -38,8 +38,7 @@
                 android:layout_width="168dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                android:layout_gravity="center"
-                >
+                android:layout_gravity="center">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/username_text_input_edit_text"
