@@ -2,7 +2,7 @@
 
     <PreferenceCategory app:title="Login Options">
 
-        <EditTextPreference
+        <Preference
             app:key="USERNAME_LOGGED"
             app:title="Username"
             app:useSimpleSummaryProvider="true"/>

@@ -3,6 +3,7 @@ package es.jfp.myapplication.navigation
 import android.content.Context
 import android.os.Bundle
 import androidx.preference.EditTextPreference
+import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceManager
@@ -16,18 +17,11 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
         val prefs = activity?.getSharedPreferences("LoginPreferences", Context.MODE_PRIVATE)
 
-        val usernamePreference = findPreference<EditTextPreference>("USERNAME_LOGGED")
+        val usernamePreference = findPreference<Preference>("USERNAME_LOGGED")
         val storedUsername = prefs?.getString("USERNAME_LOGGED", null)
 
-        usernamePreference?.setDefaultValue(storedUsername)
+        usernamePreference?.summary = storedUsername
 
-        val loggedPreference = findPreference<SwitchPreference>("REMEMBER_LOGIN")
-
-        if (loggedPreference!!.isChecked) {
-
-        } else {
-
-        }
 
     }
 }

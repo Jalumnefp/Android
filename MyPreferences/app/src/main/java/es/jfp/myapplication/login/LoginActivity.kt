@@ -1,8 +1,10 @@
 package es.jfp.myapplication.login
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.preference.PreferenceManager
 import com.google.android.material.snackbar.Snackbar
 import es.jfp.myapplication.login.LoginFragment.LoginFragmentButtons
 import es.jfp.myapplication.databinding.ActivityLoginBinding
@@ -18,6 +20,13 @@ class LoginActivity : AppCompatActivity(), LoginFragmentButtons,
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val sharedPreferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+        val rememberUser: Boolean = sharedPreferences.getBoolean("REMEMBER_LOGIN", false)
+        if (rememberUser) {
+            this.onClickLoginButton()
+        }
+
     }
 
     override fun onClickRegisterButton() {
