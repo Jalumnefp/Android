@@ -7,12 +7,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import es.jfp.carsmanagement2.R
-import es.jfp.carsmanagement2.classes.Car
+import es.jfp.carsmanagement2.database.Car
 
 class CarsAdapter (private val context: Context,
                    private val products: MutableList<Car>,
-                   private val mListener: (Car) -> Unit) :
-    RecyclerView.Adapter<CarsAdapter.ProductsViewHolder>(){
+                   private val mListener: (Car) -> Unit
+) : RecyclerView.Adapter<CarsAdapter.ProductsViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductsViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.car_item, parent, false)
@@ -28,7 +28,6 @@ class CarsAdapter (private val context: Context,
         holder.bindItem(product)
         holder.itemView.setOnClickListener { mListener(product) }
     }
-
 
     class ProductsViewHolder(view: View): RecyclerView.ViewHolder(view){
         private val tvBrand: TextView = view.findViewById(R.id.tvBrand)

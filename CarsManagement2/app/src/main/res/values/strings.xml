@@ -4,7 +4,7 @@
     <string name="brand">Brand</string>
     <string name="model">Model</string>
     <string name="btn_insert">insert</string>
-    <string name="warn_car_empty">carempty</string>
+    <string name="warn_car_empty">No puedes tener campos vacíos!</string>
     <string name="title_activity_aactivity">AActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
