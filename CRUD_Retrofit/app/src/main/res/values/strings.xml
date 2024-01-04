@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CRUD_Retrofit</string>
+    <string name="menu_add_title">add_car_btn</string>
+    <string name="car_brand_hint">Car\'s brand</string>
+    <string name="car_model_hint">Car\'s model</string>
+    <string name="car_photo_hint">Car\'s photo</string>
+</resources>

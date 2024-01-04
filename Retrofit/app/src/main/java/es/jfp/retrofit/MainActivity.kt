@@ -2,6 +2,7 @@ package es.jfp.retrofit
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
@@ -13,7 +14,8 @@ import kotlinx.coroutines.withContext
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var dogslist: List<String>
+    private var dogslist: MutableList<String> = mutableListOf()
+    private lateinit var adapter: DogsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setUpRecyclerView() {
 
-        val adapter = DogsAdapter(this, dogslist.toMutableList())
+        adapter = DogsAdapter(this, dogslist)
 
         binding.recyclerView.adapter = adapter
         binding.recyclerView.setHasFixedSize(true)
@@ -46,7 +48,9 @@ class MainActivity : AppCompatActivity() {
                 val response = call.body()
                 withContext(Dispatchers.Main) {
                     if (response?.status == "success") {
-                        dogslist = response.images
+                        dogslist.clear()
+                        dogslist.addAll(response.images)
+                        adapter.notifyDataSetChanged()
                     } else {
                         Toast.makeText(this@MainActivity, "Error getting the dogs", Toast.LENGTH_SHORT).show()
                     }
@@ -56,6 +60,7 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this@MainActivity, "You must type a breed!", Toast.LENGTH_SHORT).show()
 
         }
+        Log.d("TESTINGACIÓN", dogslist.size.toString())
     }
 
 
